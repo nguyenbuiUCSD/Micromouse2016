@@ -1,0 +1,4 @@
+#Tue Mar 01 20:17:15 PST 2016
+__DEFAULT__=false
+org.eclipse.help.ui.localSearch.master=true
+expression=GPIO_PinAFConfig

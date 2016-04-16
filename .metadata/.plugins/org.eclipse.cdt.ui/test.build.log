@@ -1,0 +1,211 @@
+23:38:04 **** Build of configuration Debug for project test ****
+make all 
+Building file: ../system/src/stm32f4xx/misc.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wunused -Wuninitialized -Wall -Wextra -Wmissing-declarations -Wconversion -Wpointer-arith -Wpadded -Wshadow -Wlogical-op -Waggregate-return -Wfloat-equal  -g3 -DDEBUG -DSTM32F405xx -DTRACE -DOS_USE_TRACE_ITM -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4xx" -std=gnu11 -Wmissing-prototypes -Wstrict-prototypes -Wbad-function-cast -MMD -MP -MF"system/src/stm32f4xx/misc.d" -MT"system/src/stm32f4xx/misc.o" -c -o "system/src/stm32f4xx/misc.o" "../system/src/stm32f4xx/misc.c"
+../system/src/stm32f4xx/misc.c: In function 'NVIC_PriorityGroupConfig':
+../system/src/stm32f4xx/misc.c:121:3: warning: implicit declaration of function 'assert_param' [-Wimplicit-function-declaration]
+   assert_param(IS_NVIC_PRIORITY_GROUP(NVIC_PriorityGroup));
+   ^
+../system/src/stm32f4xx/misc.c: In function 'NVIC_Init':
+../system/src/stm32f4xx/misc.c:148:19: warning: conversion to 'uint8_t' from 'long unsigned int' may alter its value [-Wconversion]
+     tmppriority = (0x700 - ((SCB->AIRCR) & (uint32_t)0x700))>> 0x08;
+                   ^
+../system/src/stm32f4xx/misc.c:149:14: warning: conversion to 'uint8_t' from 'int' may alter its value [-Wconversion]
+     tmppre = (0x4 - tmppriority);
+              ^
+../system/src/stm32f4xx/misc.c:150:14: warning: conversion to 'uint8_t' from 'int' may alter its value [-Wconversion]
+     tmpsub = tmpsub >> tmppriority;
+              ^
+../system/src/stm32f4xx/misc.c:152:19: warning: conversion to 'uint8_t' from 'int' may alter its value [-Wconversion]
+     tmppriority = NVIC_InitStruct->NVIC_IRQChannelPreemptionPriority << tmppre;
+                   ^
+../system/src/stm32f4xx/misc.c:155:19: warning: conversion to 'uint8_t' from 'int' may alter its value [-Wconversion]
+     tmppriority = tmppriority << 0x04;
+                   ^
+Finished building: ../system/src/stm32f4xx/misc.c
+ 
+Building file: ../system/src/stm32f4xx/stm32f4xx_adc.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wunused -Wuninitialized -Wall -Wextra -Wmissing-declarations -Wconversion -Wpointer-arith -Wpadded -Wshadow -Wlogical-op -Waggregate-return -Wfloat-equal  -g3 -DDEBUG -DSTM32F405xx -DTRACE -DOS_USE_TRACE_ITM -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4xx" -std=gnu11 -Wmissing-prototypes -Wstrict-prototypes -Wbad-function-cast -MMD -MP -MF"system/src/stm32f4xx/stm32f4xx_adc.d" -MT"system/src/stm32f4xx/stm32f4xx_adc.o" -c -o "system/src/stm32f4xx/stm32f4xx_adc.o" "../system/src/stm32f4xx/stm32f4xx_adc.c"
+In file included from ../system/src/stm32f4xx/stm32f4xx_adc.c:104:0:
+../system/include/stm32f4xx/stm32f4xx_adc.h:64:12: warning: padding struct to align 'ADC_ExternalTrigConvEdge' [-Wpadded]
+   uint32_t ADC_ExternalTrigConvEdge;      /*!< Select the external trigger edge and
+            ^
+../system/include/stm32f4xx/stm32f4xx_adc.h:79:1: warning: padding struct size to alignment boundary [-Wpadded]
+ }ADC_InitTypeDef;
+ ^
+../system/src/stm32f4xx/stm32f4xx_adc.c: In function 'ADC_Init':
+../system/src/stm32f4xx/stm32f4xx_adc.c:239:3: warning: implicit declaration of function 'assert_param' [-Wimplicit-function-declaration]
+   assert_param(IS_ADC_ALL_PERIPH(ADCx));
+   ^
+../system/src/stm32f4xx/stm32f4xx_adc.c: In function 'ADC_DiscModeChannelCountConfig':
+../system/src/stm32f4xx/stm32f4xx_adc.c:945:13: warning: conversion to 'uint32_t' from 'int' may change the sign of the result [-Wsign-conversion]
+   tmpreg2 = Number - 1;
+             ^
+../system/src/stm32f4xx/stm32f4xx_adc.c: In function 'ADC_InjectedChannelConfig':
+../system/src/stm32f4xx/stm32f4xx_adc.c:1237:55: warning: conversion to 'long unsigned int' from 'int' may change the sign of the result [-Wsign-conversion]
+   tmpreg2 = JSQR_JSQ_SET << (5 * (uint8_t)((Rank + 3) - (tmpreg3 + 1)));
+                                                       ^
+../system/src/stm32f4xx/stm32f4xx_adc.c:1241:64: warning: conversion to 'long unsigned int' from 'int' may change the sign of the result [-Wsign-conversion]
+   tmpreg2 = (uint32_t)ADC_Channel << (5 * (uint8_t)((Rank + 3) - (tmpreg3 + 1)));
+                                                                ^
+../system/src/stm32f4xx/stm32f4xx_adc.c: In function 'ADC_InjectedSequencerLengthConfig':
+../system/src/stm32f4xx/stm32f4xx_adc.c:1270:13: warning: conversion to 'uint32_t' from 'int' may change the sign of the result [-Wsign-conversion]
+   tmpreg2 = Length - 1; 
+             ^
+../system/src/stm32f4xx/stm32f4xx_adc.c: In function 'ADC_GetInjectedConversionValue':
+../system/src/stm32f4xx/stm32f4xx_adc.c:1488:7: warning: conversion to 'long unsigned int' from 'int' may change the sign of the result [-Wsign-conversion]
+   tmp += ADC_InjectedChannel + JDR_OFFSET;
+       ^
+Finished building: ../system/src/stm32f4xx/stm32f4xx_adc.c
+ 
+Building file: ../system/src/stm32f4xx/stm32f4xx_can.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wunused -Wuninitialized -Wall -Wextra -Wmissing-declarations -Wconversion -Wpointer-arith -Wpadded -Wshadow -Wlogical-op -Waggregate-return -Wfloat-equal  -g3 -DDEBUG -DSTM32F405xx -DTRACE -DOS_USE_TRACE_ITM -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4xx" -std=gnu11 -Wmissing-prototypes -Wstrict-prototypes -Wbad-function-cast -MMD -MP -MF"system/src/stm32f4xx/stm32f4xx_can.d" -MT"system/src/stm32f4xx/stm32f4xx_can.o" -c -o "system/src/stm32f4xx/stm32f4xx_can.o" "../system/src/stm32f4xx/stm32f4xx_can.c"
+In file included from ../system/src/stm32f4xx/stm32f4xx_can.c:86:0:
+../system/include/stm32f4xx/stm32f4xx_can.h:158:1: warning: padding struct size to alignment boundary [-Wpadded]
+ } CanTxMsg;
+ ^
+../system/src/stm32f4xx/stm32f4xx_can.c: In function 'CAN_DeInit':
+../system/src/stm32f4xx/stm32f4xx_can.c:171:3: warning: implicit declaration of function 'assert_param' [-Wimplicit-function-declaration]
+   assert_param(IS_CAN_ALL_PERIPH(CANx));
+   ^
+../system/src/stm32f4xx/stm32f4xx_can.c: In function 'CAN_Receive':
+../system/src/stm32f4xx/stm32f4xx_can.c:776:24: warning: conversion to 'uint8_t' from 'long unsigned int' may alter its value [-Wconversion]
+   RxMessage->Data[3] = (uint8_t)0xFF & (CANx->sFIFOMailBox[FIFONumber].RDLR >> 24);
+                        ^
+../system/src/stm32f4xx/stm32f4xx_can.c:780:24: warning: conversion to 'uint8_t' from 'long unsigned int' may alter its value [-Wconversion]
+   RxMessage->Data[7] = (uint8_t)0xFF & (CANx->sFIFOMailBox[FIFONumber].RDHR >> 24);
+                        ^
+Finished building: ../system/src/stm32f4xx/stm32f4xx_can.c
+ 
+Building file: ../system/src/stm32f4xx/stm32f4xx_crc.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wunused -Wuninitialized -Wall -Wextra -Wmissing-declarations -Wconversion -Wpointer-arith -Wpadded -Wshadow -Wlogical-op -Waggregate-return -Wfloat-equal  -g3 -DDEBUG -DSTM32F405xx -DTRACE -DOS_USE_TRACE_ITM -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4xx" -std=gnu11 -Wmissing-prototypes -Wstrict-prototypes -Wbad-function-cast -MMD -MP -MF"system/src/stm32f4xx/stm32f4xx_crc.d" -MT"system/src/stm32f4xx/stm32f4xx_crc.o" -c -o "system/src/stm32f4xx/stm32f4xx_crc.o" "../system/src/stm32f4xx/stm32f4xx_crc.c"
+Finished building: ../system/src/stm32f4xx/stm32f4xx_crc.c
+ 
+Building file: ../system/src/stm32f4xx/stm32f4xx_cryp.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wunused -Wuninitialized -Wall -Wextra -Wmissing-declarations -Wconversion -Wpointer-arith -Wpadded -Wshadow -Wlogical-op -Waggregate-return -Wfloat-equal  -g3 -DDEBUG -DSTM32F405xx -DTRACE -DOS_USE_TRACE_ITM -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4xx" -std=gnu11 -Wmissing-prototypes -Wstrict-prototypes -Wbad-function-cast -MMD -MP -MF"system/src/stm32f4xx/stm32f4xx_cryp.d" -MT"system/src/stm32f4xx/stm32f4xx_cryp.o" -c -o "system/src/stm32f4xx/stm32f4xx_cryp.o" "../system/src/stm32f4xx/stm32f4xx_cryp.c"
+../system/src/stm32f4xx/stm32f4xx_cryp.c: In function 'CRYP_Init':
+../system/src/stm32f4xx/stm32f4xx_cryp.c:240:3: warning: implicit declaration of function 'assert_param' [-Wimplicit-function-declaration]
+   assert_param(IS_CRYP_ALGOMODE(CRYP_InitStruct->CRYP_AlgoMode));
+   ^
+../system/src/stm32f4xx/stm32f4xx_cryp.c:245:3: error: 'CRYP' undeclared (first use in this function)
+   CRYP->CR &= ~CRYP_CR_ALGOMODE;
+   ^
+../system/src/stm32f4xx/stm32f4xx_cryp.c:245:3: note: each undeclared identifier is reported only once for each function it appears in
+../system/src/stm32f4xx/stm32f4xx_cryp.c:245:16: error: 'CRYP_CR_ALGOMODE' undeclared (first use in this function)
+   CRYP->CR &= ~CRYP_CR_ALGOMODE;
+                ^
+../system/src/stm32f4xx/stm32f4xx_cryp.c:249:16: error: 'CRYP_CR_DATATYPE' undeclared (first use in this function)
+   CRYP->CR &= ~CRYP_CR_DATATYPE;
+                ^
+../system/src/stm32f4xx/stm32f4xx_cryp.c:259:18: error: 'CRYP_CR_KEYSIZE' undeclared (first use in this function)
+     CRYP->CR &= ~CRYP_CR_KEYSIZE;
+                  ^
+../system/src/stm32f4xx/stm32f4xx_cryp.c:266:16: error: 'CRYP_CR_ALGODIR' undeclared (first use in this function)
+   CRYP->CR &= ~CRYP_CR_ALGODIR;
+                ^
+../system/src/stm32f4xx/stm32f4xx_cryp.c: In function 'CRYP_KeyInit':
+../system/src/stm32f4xx/stm32f4xx_cryp.c:301:3: error: 'CRYP' undeclared (first use in this function)
+   CRYP->K0LR = CRYP_KeyInitStruct->CRYP_Key0Left;
+   ^
+../system/src/stm32f4xx/stm32f4xx_cryp.c: In function 'CRYP_IVInit':
+../system/src/stm32f4xx/stm32f4xx_cryp.c:337:3: error: 'CRYP' undeclared (first use in this function)
+   CRYP->IV0LR = CRYP_IVInitStruct->CRYP_IV0Left;
+   ^
+../system/src/stm32f4xx/stm32f4xx_cryp.c: In function 'CRYP_FIFOFlush':
+../system/src/stm32f4xx/stm32f4xx_cryp.c:367:3: error: 'CRYP' undeclared (first use in this function)
+   CRYP->CR |= CRYP_CR_FFLUSH;
+   ^
+../system/src/stm32f4xx/stm32f4xx_cryp.c:367:15: error: 'CRYP_CR_FFLUSH' undeclared (first use in this function)
+   CRYP->CR |= CRYP_CR_FFLUSH;
+               ^
+../system/src/stm32f4xx/stm32f4xx_cryp.c: In function 'CRYP_Cmd':
+../system/src/stm32f4xx/stm32f4xx_cryp.c:384:5: error: 'CRYP' undeclared (first use in this function)
+     CRYP->CR |= CRYP_CR_CRYPEN;
+     ^
+../system/src/stm32f4xx/stm32f4xx_cryp.c:384:17: error: 'CRYP_CR_CRYPEN' undeclared (first use in this function)
+     CRYP->CR |= CRYP_CR_CRYPEN;
+                 ^
+../system/src/stm32f4xx/stm32f4xx_cryp.c: In function 'CRYP_DataIn':
+../system/src/stm32f4xx/stm32f4xx_cryp.c:421:3: error: 'CRYP' undeclared (first use in this function)
+   CRYP->DR = Data;
+   ^
+../system/src/stm32f4xx/stm32f4xx_cryp.c: In function 'CRYP_DataOut':
+../system/src/stm32f4xx/stm32f4xx_cryp.c:431:10: error: 'CRYP' undeclared (first use in this function)
+   return CRYP->DOUT;
+          ^
+../system/src/stm32f4xx/stm32f4xx_cryp.c: In function 'CRYP_SaveContext':
+../system/src/stm32f4xx/stm32f4xx_cryp.c:480:3: error: 'CRYP' undeclared (first use in this function)
+   CRYP->DMACR &= ~(uint32_t)CRYP_DMACR_DIEN;
+   ^
+../system/src/stm32f4xx/stm32f4xx_cryp.c:480:29: error: 'CRYP_DMACR_DIEN' undeclared (first use in this function)
+   CRYP->DMACR &= ~(uint32_t)CRYP_DMACR_DIEN;
+                             ^
+../system/src/stm32f4xx/stm32f4xx_cryp.c:486:30: error: 'CRYP_CR_ALGOMODE_TDES_ECB' undeclared (first use in this function)
+   if ((CRYP->CR & (uint32_t)(CRYP_CR_ALGOMODE_TDES_ECB | CRYP_CR_ALGOMODE_TDES_CBC)) != (uint32_t)0 )/* TDES */
+                              ^
+../system/src/stm32f4xx/stm32f4xx_cryp.c:486:58: error: 'CRYP_CR_ALGOMODE_TDES_CBC' undeclared (first use in this function)
+   if ((CRYP->CR & (uint32_t)(CRYP_CR_ALGOMODE_TDES_ECB | CRYP_CR_ALGOMODE_TDES_CBC)) != (uint32_t)0 )/* TDES */
+                                                          ^
+../system/src/stm32f4xx/stm32f4xx_cryp.c:488:18: error: 'CRYP_SR_IFEM' undeclared (first use in this function)
+     ckeckmask =  CRYP_SR_IFEM | CRYP_SR_BUSY ;
+                  ^
+../system/src/stm32f4xx/stm32f4xx_cryp.c:488:33: error: 'CRYP_SR_BUSY' undeclared (first use in this function)
+     ckeckmask =  CRYP_SR_IFEM | CRYP_SR_BUSY ;
+                                 ^
+../system/src/stm32f4xx/stm32f4xx_cryp.c:492:48: error: 'CRYP_SR_OFNE' undeclared (first use in this function)
+     ckeckmask =  CRYP_SR_IFEM | CRYP_SR_BUSY | CRYP_SR_OFNE;
+                                                ^
+../system/src/stm32f4xx/stm32f4xx_cryp.c:512:31: error: 'CRYP_DMACR_DOEN' undeclared (first use in this function)
+     CRYP->DMACR &= ~(uint32_t)CRYP_DMACR_DOEN;
+                               ^
+../system/src/stm32f4xx/stm32f4xx_cryp.c:513:28: error: 'CRYP_CR_CRYPEN' undeclared (first use in this function)
+     CRYP->CR &= ~(uint32_t)CRYP_CR_CRYPEN;
+                            ^
+../system/src/stm32f4xx/stm32f4xx_cryp.c:516:50: error: 'CRYP_CR_KEYSIZE' undeclared (first use in this function)
+     CRYP_ContextSave->CR_bits9to2  = CRYP->CR & (CRYP_CR_KEYSIZE  | 
+                                                  ^
+../system/src/stm32f4xx/stm32f4xx_cryp.c:517:50: error: 'CRYP_CR_DATATYPE' undeclared (first use in this function)
+                                                  CRYP_CR_DATATYPE | 
+                                                  ^
+../system/src/stm32f4xx/stm32f4xx_cryp.c:518:50: error: 'CRYP_CR_ALGOMODE' undeclared (first use in this function)
+                                                  CRYP_CR_ALGOMODE |
+                                                  ^
+../system/src/stm32f4xx/stm32f4xx_cryp.c:519:50: error: 'CRYP_CR_ALGODIR' undeclared (first use in this function)
+                                                  CRYP_CR_ALGODIR); 
+                                                  ^
+../system/src/stm32f4xx/stm32f4xx_cryp.c: In function 'CRYP_RestoreContext':
+../system/src/stm32f4xx/stm32f4xx_cryp.c:561:3: error: 'CRYP' undeclared (first use in this function)
+   CRYP->CR = CRYP_ContextRestore->CR_bits9to2;
+   ^
+../system/src/stm32f4xx/stm32f4xx_cryp.c:580:15: error: 'CRYP_CR_CRYPEN' undeclared (first use in this function)
+   CRYP->CR |= CRYP_CR_CRYPEN;
+               ^
+../system/src/stm32f4xx/stm32f4xx_cryp.c: In function 'CRYP_DMACmd':
+../system/src/stm32f4xx/stm32f4xx_cryp.c:627:5: error: 'CRYP' undeclared (first use in this function)
+     CRYP->DMACR |= CRYP_DMAReq;
+     ^
+../system/src/stm32f4xx/stm32f4xx_cryp.c: In function 'CRYP_ITConfig':
+../system/src/stm32f4xx/stm32f4xx_cryp.c:752:5: error: 'CRYP' undeclared (first use in this function)
+     CRYP->IMSCR |= CRYP_IT;
+     ^
+../system/src/stm32f4xx/stm32f4xx_cryp.c: In function 'CRYP_GetITStatus':
+../system/src/stm32f4xx/stm32f4xx_cryp.c:778:8: error: 'CRYP' undeclared (first use in this function)
+   if ((CRYP->MISR &  CRYP_IT) != (uint8_t)RESET)
+        ^
+../system/src/stm32f4xx/stm32f4xx_cryp.c: In function 'CRYP_GetFlagStatus':
+../system/src/stm32f4xx/stm32f4xx_cryp.c:816:15: error: 'CRYP' undeclared (first use in this function)
+     tempreg = CRYP->RISR;
+               ^
+../system/src/stm32f4xx/stm32f4xx_cryp.c: In function 'CRYP_DataOut':
+../system/src/stm32f4xx/stm32f4xx_cryp.c:432:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [system/src/stm32f4xx/stm32f4xx_cryp.o] Error 1
+
+23:38:05 Build Finished (took 1s.49ms)
+

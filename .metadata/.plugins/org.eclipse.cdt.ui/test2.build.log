@@ -1,0 +1,20 @@
+02:35:24 **** Incremental Build of configuration Release for project test2 ****
+make all 
+Building target: test2.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -Wall -Wextra  -g -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"test2.map" --specs=nano.specs -o "test2.elf"  ./system/src/stm32f4-hal/stm32f4xx_hal.o ./system/src/stm32f4-hal/stm32f4xx_hal_adc.o ./system/src/stm32f4-hal/stm32f4xx_hal_adc_ex.o ./system/src/stm32f4-hal/stm32f4xx_hal_cortex.o ./system/src/stm32f4-hal/stm32f4xx_hal_flash.o ./system/src/stm32f4-hal/stm32f4xx_hal_gpio.o ./system/src/stm32f4-hal/stm32f4xx_hal_iwdg.o ./system/src/stm32f4-hal/stm32f4xx_hal_pwr.o ./system/src/stm32f4-hal/stm32f4xx_hal_rcc.o ./system/src/stm32f4-hal/stm32f4xx_hal_spi.o ./system/src/stm32f4-hal/stm32f4xx_hal_tim.o ./system/src/stm32f4-hal/stm32f4xx_hal_tim_ex.o ./system/src/stm32f4-hal/stm32f4xx_hal_uart.o ./system/src/stm32f4-hal/stm32f4xx_hal_usart.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/startup_stm32f405xx.o ./system/src/cmsis/system_stm32f4xx.o  ./src/_write.o ./src/main.o ./src/stm32f4xx_hal_msp.o ./src/stm32f4xx_it.o   
+Finished building target: test2.elf
+ 
+Invoking: Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O binary "test2.elf"  "test2.bin"
+Finished building: test2.bin
+ 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "test2.elf"
+   text	   data	    bss	    dec	    hex	filename
+  12809	    172	    872	  13853	   361d	test2.elf
+Finished building: test2.siz
+ 
+
+02:35:24 Build Finished (took 188ms)
+
